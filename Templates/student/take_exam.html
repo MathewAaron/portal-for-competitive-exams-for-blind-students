@@ -1,0 +1,62 @@
+{% extends 'student/studentbase.html' %}
+{% block content %}
+{%load static%}
+
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+</head>
+<br><br>
+<div class="container my-4">
+    <div class="jumbotron">
+
+	      <h3 class="text-info text-center">Before you start the Exam, here are the rules</h3>
+
+        <div class="row">
+
+            <div class="card border-info mx-4 my-4">
+                <div class="card-body text-info">
+
+                    <h4 class="card-title">Exam Details :</h4>
+                    <p class="card-text">
+                        </p><ul style="list-style:decimal;">
+                            <li id='Examname'>Exam Name : {{course.course_name}}</li>
+                            <li id='totalquestion'>Total Question : {{total_questions}}</li>
+                            <li id='TotalMarks'>Total Marks : {{total_marks}}</li>
+                        </ul>
+                    <p></p>
+
+
+
+                    <h4 class="card-title">Rules :</h4>
+                    <p class="card-text">
+                        </p><ul style="list-style:decimal;">
+                            <li id="instruct1">All questions are multiple choice questions with 4 options, out of which only 1 option is correct. </li>
+                            <li id="instruct2"><span class="text-danger"> Every question is worth 10 marks.</span>    </li>
+                            <li id="instruct3"> Test duration is 3 hours.</li>
+                            <li id="instruct4"> Please note these important keywords. - </li>
+                            <li id="instruct5"> Time - Will indicate the time remaining.</li>
+                            <li id="instruct6"> Next Question - To navigate to the next question.</li>
+                            <li id="instruct7"> Previous Question - To navigate to the previous question. </li>
+                            <li id="instruct8"> Answer - To mark the answer for a particular question.</li>
+                            <li id="instruct9"> Mark for review - To mark a question for review, so that you can come back to it later.</li>
+                            <li id="instruct10"> Submit - To submit the test.</li>
+                            <li id="instruct11">At the end of the exam, your score will be communicated to you immediately.</li>
+                        </ul>
+                    <p></p>
+                    <a href="{% url 'start-exam' course.id  %}" class="btn btn-info" id="start_exam_button">Let's Start</a>
+                </div>  
+                <div class="card-footer">Best Of Luck</div>  
+            </div>  
+        </div>  
+
+    </div>
+</div>
+
+<script async src="{% static "js/instructions.js" %}"></script>
+
+
+<br><br><br><br><br><br>
+{% endblock content %}

@@ -1,0 +1,63 @@
+{% extends 'quiz/adminbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    a:link {
+        text-decoration: none;
+    }
+     #ipboxid
+    {
+        border-radius: 5px;
+        border: 1px solid #D3D3D3;
+        padding: 20px; 
+        width: 100%;
+        height:0.5%;
+    }
+    
+  </style>
+</head>
+<script>
+    var question = '{{ questionselected.question}}';
+    console.log(question);
+</script>
+<h2 style="text-align:center; color:blue;">UPDATE QUESTION</h2>
+<form method="POST" autocomplete="off" style="margin:100px;margin-top: 0px;">
+    {%csrf_token%}
+    <div class="form-group">
+        <label for="question">Question</label><br>
+        <input id = "ipboxid" type="text" name="question" value="{{questionselected.question}}">
+        <br>
+        <label for="question_number">Marks</label>
+        <input id = "ipboxid" type="text" name="marks" value="{{questionselected.marks}}">
+        <br>
+        <label for="option1">Option 1</label>
+        <input id = "ipboxid" type="text" name="option1" value="{{questionselected.option1}}">
+        <br>
+        <label for="option2">Option 2</label>
+        <input id = "ipboxid" type="text" name="option2" value="{{questionselected.option2}}">
+        <br>
+        <label for="option3">Option 3</label>
+        <input id = "ipboxid" type="text" name="option3" value="{{questionselected.option3}}">
+        <br>
+        <label for="option4">Option 4</label>
+        <input id = "ipboxid" type="text" name="option4" value="{{questionselected.option4}}">
+        <br>
+        <label for="answer">Answer</label>
+        {% render_field questionForm.answer|attr:'required:true' class="form-control" %}
+
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+<br><br><br>
+{% endblock content %}
