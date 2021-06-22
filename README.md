@@ -47,7 +47,7 @@ py manage.py createsuperuser
 - Install Python(3.7.6) (Dont Forget to Tick Add to Path while installing Python)
 - Open Terminal and Execute Following Commands :
 ```
-python -m pip install -r requirements. txt
+python -m pip install -r requirements.txt
 ```
 - Download This Project Zip Folder and Extract it
 - Move to project folder in Terminal. Then run following Commands :
@@ -62,7 +62,7 @@ http://127.0.0.1:8000/
 ```
 
 ## CHANGES REQUIRED FOR CONTACT US PAGE
-- In settins.py file, You have to give your email and password
+- In settings.py file, You have to give your email and password
 ```
 EMAIL_HOST_USER = 'youremail@gmail.com'
 EMAIL_HOST_PASSWORD = 'your email password'
